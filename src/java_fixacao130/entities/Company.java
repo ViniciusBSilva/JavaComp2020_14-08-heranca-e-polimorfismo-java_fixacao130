@@ -24,9 +24,9 @@ public class Company extends TaxPayer {
 		Double totalTax;
 		
 		if (numberOfEmployees > NUMBER_OF_EMPLOYEES_DISCOUNT_MINIMUM) {
-			totalTax = (getAnualIncome() + (getAnualIncome() * 14 / 100));
+			totalTax = (getAnualIncome() * 14 / 100);
 		} else {
-			totalTax = (getAnualIncome() + (getAnualIncome() * 16 / 100));
+			totalTax = (getAnualIncome() * 16 / 100);
 		}
 		
 		return totalTax;

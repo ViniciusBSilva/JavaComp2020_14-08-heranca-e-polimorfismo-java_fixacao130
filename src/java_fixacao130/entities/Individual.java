@@ -25,15 +25,15 @@ public class Individual extends TaxPayer {
 		Double healthExpendituresDiscount = 0.00;
 
 		if (healthExpenditures > 0) {
-			healthExpendituresDiscount = healthExpenditures * (50 / 100);
+			healthExpendituresDiscount = this.healthExpenditures * 50 / 100;
 		}
 
 		Double totalTax;
 
 		if (getAnualIncome() > INCOME_BRACKET_LIMIT) {
-			totalTax = (getAnualIncome() + (getAnualIncome() * 25 / 100)) - healthExpendituresDiscount;
+			totalTax = (getAnualIncome() * 25 / 100) - healthExpendituresDiscount;
 		} else {
-			totalTax = (getAnualIncome() + (getAnualIncome() * 15 / 100)) - healthExpendituresDiscount;
+			totalTax = (getAnualIncome() * 15 / 100) - healthExpendituresDiscount;
 		}
 
 		return totalTax;
